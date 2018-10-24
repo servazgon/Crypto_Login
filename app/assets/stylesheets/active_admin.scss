@@ -1,0 +1,309 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+//$primary-color: #275B9D !default;
+//$primary-color: #1e7fa3 !default;
+$primary-color: #1E477A !default;
+
+//@import "active_admin/variables";
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+// Gemのcssが気に食わないので、上書きする
+#active_admin_content {
+	padding: 10px !important;
+}
+
+.panel_contents {
+	padding: 3px 5px 5px 5px !important;
+}
+
+.columns {
+    margin-bottom: 5px !important;
+}
+
+.panel {
+  margin-bottom: 8px !important;
+
+  > h3 {
+    background-color: #1AAB83 !important;
+  }
+}
+
+.status_tag {
+	&.charged { background: #8daa92; }
+	&.refund { background: #d45f53; }
+}
+
+body.active_admin {
+	.status_tag.yes { background: #6090DB; }	
+  	.status_tag.no { background: grey; }
+
+  	.status_tag.ue { background: #94DE03; }
+  	.status_tag.shita { background: #F92E0D; }
+  	.status_tag.onaji { background: #F9A702; }
+}
+
+.image_size_small {
+  width: 30px;
+  height: 30px;
+}
+
+.image_size_medium {
+  width: 40px;
+  height: 40px;
+}
+
+.image_size {
+  width: 100px;
+  height: 100px;
+}
+
+.col_right {
+  text-align :right;
+}
+
+.col_left {
+  text-align :left;
+}
+
+.col_center {
+  text-align :center;
+}
+.graph_border {
+  border-style:solid 2px;
+  border-color:black;  
+}
+
+#title_bar {
+  padding: 4px 30px !important;
+  border-bottom: 3px solid #4F93DD !important;
+}
+
+/* ----- app_detail ----- */
+/* main-content */
+.info-panel {
+  h3 {
+    margin-bottom: 0px !important;
+  }
+
+  .panel_contents {
+	  padding: 3px 5px 0px 5px !important;
+
+    table {
+      margin: 0px;
+    }
+    th {
+      padding-top: 0px;
+    }
+    h3 {
+      margin: 0px;
+      padding: 7px 5px 5px 5px;
+      font-size: 1.5em;
+      color: black;
+    }
+    .graph {
+      position: relative;
+    }
+    .graph-type-box {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      text-align: right;
+      width: 23%;
+    }
+  }
+}
+
+.table {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+/* side-bar */
+.custom_filter_form {
+  .str_search_text {
+    margin-left: 0px !important;
+    width: 88px !important;
+    float: left;
+  }
+
+  .str_search_select {
+    margin-left: 17px !important;
+    width: 109px !important;
+    margin-top: 5px;
+  }
+}
+
+.detail-title-wrapper {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid #cfe2f6;
+}
+
+.app-icon {
+  width: 70px;
+  height: 70px;
+  padding-right: 15px;
+
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.app-title {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    height: 35px;
+    line-height: 35px;
+    font-size: 2.0em;
+  }
+
+  .menu-title {
+    padding-left: 20px;
+    font-size: 1.0em;
+    color: #888;
+  }
+}
+
+// tab
+.tab-content {
+  height: 400px;
+  padding: 15px;
+
+  .ranking-table {
+    height: 370px;
+  }
+  // .highcharts-background {
+  //   height: 260px;
+  // }
+}
+
+// ------------------------------------------
+//                 app_list
+// ------------------------------------------
+.search-bar {
+  padding: 10px 10px;
+  background-color: #eee;
+
+  .provider-select-wrapper {
+    margin-right: 10px;
+
+    #provider-select {
+      width: 100px;
+      height: 27px;
+      color: #333;
+      background-color: #fff;
+      line-height: 25px;
+      margin: 0px  0px  0px  0px; 
+      padding: 0px  0px  0px  10px; 
+    }
+  }
+
+  .keyword-field-wrapper {
+
+    #keyword-field {
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+      border:#a9a9a9 1px solid;
+      width:300px;
+      height:25px;
+      padding:0 8px;
+    }
+  }
+}
+
+// item width
+// $screen_size: 25%;
+
+// @media only screen and (max-width:1199px) {
+//   $item_width: 25%;
+// }
+// @media only screen and  (min-width:1200px) and (max-width:1439px) {
+//   $item_width: 20%;
+// }
+// @media only screen and  (min-width:1440px) and (max-width:1679px) {
+//   $item_width: 16.6%;
+// }
+// @media only screen and  (min-width:1680px) {
+//   $item_width: 14.2%;
+// }
+
+#items-wrapper {
+  margin: 0;
+  padding: 0;
+
+  .item {
+    $pd_horizontal: 35px;
+
+    @media only screen and (max-width:1199px) {
+      width: calc(25% - #{$pd_horizontal} * 2);
+    }
+    @media only screen and  (min-width:1200px) and (max-width:1439px) {
+      width: calc(20% - #{$pd_horizontal} * 2);
+    }
+    @media only screen and  (min-width:1440px) and (max-width:1679px) {
+      width: calc(16.6% - #{$pd_horizontal} * 2);
+    }
+    @media only screen and  (min-width:1680px) {
+      width: calc(14.2% - #{$pd_horizontal} * 2);
+    }
+
+    display: block;
+    float: left;
+    padding: 30px $pd_horizontal;
+    height: 250px;
+    list-style-type: none;
+    background: #0cc;
+    text-align: center;
+    
+
+    .item-icon {
+      width: 130px;
+      margin: 0 auto 10px auto;
+    }
+  }
+}
+
+// .date-picker {
+//   height: 32px;
+// }
+
+/* ----- utils ----- */
+/* align-center */
+.align-center {
+  text-align: center;
+}
+
+/* clear-fix */
+.clear {
+  overflow: hidden;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.max-width {
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    stdin_open: true
+    build: .
+    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle exec rake db:create && bundle exec rake db:migrate && bundle exec rake assets:precompile && bundle exec rails s -p 3001 -b '0.0.0.0'"
+    environment:
+      DB_HOST_NAME: db
+    volumes:
+      - .:/myapp
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    restart: on-failure
+    environment:
+      MYSQL_DATABASE: gmo
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
